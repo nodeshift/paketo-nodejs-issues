@@ -1,0 +1,1 @@
+curl https://raw.githubusercontent.com/paketo-buildpacks/nodejs/main/package.toml |grep uri | grep registry| sed 's/  uri = "urn:cnb:registry://' | awk -F "@" '{print $1}' | grep -v watchexec |grep -v procfile |grep -v environment-variables |grep -v image-labels |grep -v ca-certificates |grep -v watchexec
