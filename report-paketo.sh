@@ -1,4 +1,5 @@
 bash get-repos.sh >repos.txt
+echo paketo-buildpacks/nodejs >>repos.txt
 
 date=$(date '+%Y-%m-%d')
 
