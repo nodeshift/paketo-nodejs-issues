@@ -1,5 +1,6 @@
 bash get-repos.sh >repos.txt
 echo paketo-buildpacks/nodejs >>repos.txt
+echo paketo-community/ubi-nodejs-extension >>repos.txt
 
 date=$(date '+%Y-%m-%d')
 
@@ -10,4 +11,5 @@ while read repo; do
   echo "" >>report
 done <repos.txt
 
-cat report |grep -v Bump |grep -v Failure >report-stripped
+cat report |grep -v Bump |grep -v Failure | grep -v bump | \
+    grep -v "Cut buildpack releases" | grep -v "Updates github-config" >report-stripped
